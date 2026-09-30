@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/style.css" />
+  </head>
+  <body>
+    <!-- App Bar (custom element) -->
+    <app-bar></app-bar>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1 class="hero__title">Selamat Datang di Notes App 👋</h1>
+        <p class="hero__subtitle">
+          Simpan ide, catatan, dan momen penting Anda di sini.
+        </p>
+        <div class="hero__counter">
+          <span id="notesCount">0</span> catatan tersimpan
+        </div>
+      </section>
+
+      <!-- Form Tambah Catatan -->
+      <section class="input-section">
+        <note-input></note-input>
+      </section>
+
+      <!-- Daftar Catatan -->
+      <section class="notes-section">
+        <div class="notes-header">
+          <h2 class="section-title">Daftar Catatan</h2>
+
+          <div class="notes-controls">
+            <!-- Search Bar -->
+            <div class="search-bar">
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Cari catatan..."
+                aria-label="Cari catatan"
+              />
+            </div>
+
+            <!-- Sort Dropdown -->
+            <select id="sortSelect" class="sort-select" aria-label="Urutkan catatan">
+              <option value="newest">Terbaru</option>
+              <option value="oldest">Terlama</option>
+              <option value="title">Judul (A-Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="notesList" class="notes-list"></div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" hidden>
+          <div class="empty-state__icon">📭</div>
+          <p class="empty-state__text">Belum ada catatan yang cocok.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Notes App &copy; 2024 — Dibuat dengan ❤️</p>
+    </footer>
+
+    <script type="module" src="src/scripts/main.js"></script>
+  </body>
+</html>
